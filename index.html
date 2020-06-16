@@ -1,34 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- jQuery-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- link css -->
+  <!-- link css -->
+  <!-- bootstrap (off)-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Boolzap</title>
+</head>
 
-    <!-- bootstrap (off)-->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="css/style.css">
-    <title>Boolzap</title>
-  </head>
 
+<body>
+  <!-- wrapper generico (sfondo gradient) -->
+  <div class="ms_wrapper-bg-gradient">
 
-  <body>
-<!-- wrapper generico (sfondo gradient) -->
-    <div class="wrapper-bg-gradient">
+    <!-- container principale webapp -->
+    <div class="ms_container-webapp">
 
-      <!-- container chat -->
-        <div class="container-chat">
+      <!-- contenitore sidebar left -->
+      <div class="ms_sidebar">
+
+        <!-- barra superiore -->
+
+        <div class="ms_top-bar ms_left">
+           qui ci va l avatar personale,  icone storia, messaggio, menu
+        </div>
+
+        <div class="ms_notification">
+          qui ci vanno le notifiche
+        </div>
+
+        <!-- barra ricerca contatti -->
+        <div class="ms_search-bar">
+
+          qui ci va la barra di ricerca
+          <!-- qui ci va l input per la ricerca dei contatti -->
+        </div>
+
+        <div class="ms_chatList ms_overflow  ">
+  <!-- qui ci va l'elenco delle chat attive -->
+          <!-- debug -->
+        <div class="ms_chatbox"> chat 1</div>
+        <div class="ms_chatbox"> chat 2</div>
+        <div class="ms_chatbox"> chat 3  </div>
+        <div class="ms_chatbox"> chat 4</div>
+        <div class="ms_chatbox"> chat 5</div>
+        <div class="ms_chatbox"></div>
+        <div class="ms_chatbox"></div>
+        <div class="ms_chatbox"></div>
+        <div class="ms_chatbox"></div>
+
+        <!-- fine debug -->
+        </div>
+
+      </div>
+      <!-- Fine contenitore sidebar left -->
+
+      <!-- contenitore destro -->
+
+      <div class="ms_content">
+
+        <div class="ms_top-bar">
 
         </div>
 
+        <div class="  ms_message ms_overflow ">
+
+
+        </div>
+
+        <div class="ms_textArea">
+
+        </div>
+
+      </div>
+      <!-- Fine contenitore destro -->
+
 
     </div>
+    <!-- Fine container principale webapp -->
 
 
 
-<!-- script js-->
+  </div>
+  <!-- Fine wrapper generico (sfondo gradient) -->
+  <!-- script js-->
   <script type="text/javascript" src="js/script.js">  </script>
-  </body>
+</body>
 </html>
