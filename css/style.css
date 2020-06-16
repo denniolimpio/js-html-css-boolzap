@@ -1,3 +1,37 @@
-body {
-  background: red;
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+/* Fine Reset */
+
+/* Layout */
+
+.wrapper-bg-gradient {
+  height: 100vh;
+  position: relative;
+  background: rgb(12,151,144);
+  background: linear-gradient(180deg, rgba(12,151,144,1) 15%, rgba(220,219,211,1) 15%);
+}
+
+.container-chat {
+  height: 95%;
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  margin: auto;
+  background-color: red; /* debug */
+
+}
+/*  Fine Layout */
+
+/* Classi  */
+/* Fine Classi  */
+
+
+/* MediaQuery */
+/* Fine MediaQuery */

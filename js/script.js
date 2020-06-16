@@ -1,4 +1,4 @@
 $(document).ready( function(){
-  alert("js caricato");
-  
+  // alert("js caricato"); //debug
+
 });
