@@ -12,10 +12,7 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
-img {
-  height: 80%;
-  border-radius: 50%;
-}
+
 
 ul {
   list-style-type: none;
@@ -30,6 +27,10 @@ ul li {
 i {
   font-size: 22px;
   color: #b1b1b1;
+}
+img {
+  border-radius: 50%;
+
 }
 /* Fine Generali */
 
@@ -74,6 +75,7 @@ i {
   min-width: 400px;
 }
 
+/* barra superiore */
 .ms_top-bar {
   width: 100%;
   height: 90px;
@@ -82,35 +84,98 @@ i {
   justify-content: space-between;
   align-items: center;
 }
+.ms_top-bar img {
+    height: 80%;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+/* barra delle notifiche */
 .ms_sidebar .ms_notification {
   display: flex;
+  flex-flow: row wrap;
   justify-content:  flex-start;
   align-items: center;
   width: 100%;
   height: 90px;
   background-color: #8edafc;
+}
+.ms_notification-icon {
+  color: #8edafc;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 16px 12px;
+  margin: 0 10px 0 30px;
+}
+.ms_bell i {
+  font-size: 25px;
+}
+.ms_bell-text p {
+  padding: 5px 0;
+  font-size: 15px;
 
 }
+.ms_bell-text a {
+  font-size: 13px;
+  color: grey;
+}
+/* fine barra delle notifiche */
+
+/* barra ricerca */
 .ms_sidebar .ms_search-bar {
+  position: relative;
   height: 50px;
   background-color: #fafafa;
+  margin: 0px 5px;
 
 }
 
-
-.ms_inputSearch {
-  text-align: center;
+.ms_form input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px 10px 45px;
+  margin: 5px 0px;
+  border: .25px solid #F5F5F5;;
+  border-radius: 4px;
 }
+
+.ms_form input::placeholder{
+  font-size: 12px;
+  color: #b1b1b1;
+}
+.ms_search-icn{
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  font-size: 20px;
+
+}
+/* fine barra ricerca */
+
+/* Elenco Chat */
 .ms_sidebar .ms_chatList {
   height: calc(100% - 230px);
 }
 
-/* debug */
-.ms_chatbox {
+.ms_chat-item {
   height: 100px;
-  border: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: .2px solid #F5F5F5;
 }
+.ms_chat-item .ms_avatar {
+  margin: 0 15px;
+
+}
+.ms_chat-item .ms_info-contact p{
+  color: #D0D0D0;
+  margin: 5px 0;
+}
+
+/* Fine Elenco Chat */
+
 /* fine layout Sidebar  */
+
 
 /* Content layout */
 
@@ -124,13 +189,7 @@ i {
   background-color: #f3eeea;
 }
 
-.ms_round_img {
-  height: 85%;
-}
-.ms_round_img img{
-  margin: 0 10px;
 
-}
 
 
 /*  Fine Layout */
@@ -142,15 +201,11 @@ i {
 
 }
 
- .ms_notification-icon {
-   color: #8edafc;
-   border-radius: 50%;
-   background-color: #fff;
-   padding: 16px 12px;
-   margin: 0 10px 0 30px;
- }
 
 
+.ms_chatList img {
+  width: 70px;
+}
 
 
 /* Fine Classi  */
