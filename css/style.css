@@ -299,9 +299,37 @@ input:focus{
 
 }
 
+.ms_dropdown {
+  display: none;
+
+}
+.ms_dropdown.active {
+  display: block;
+}
+
+.ms_dropdown {
+  position: absolute;
+  top: 74%;
+  left: 40px;
+  z-index: 1;
+  width: 180px;
+  background-color: #fff;
+  box-shadow: 0px 15px 23px -21px rgba(0,0,0,0.64);
+
+}
+.ms_dropdown li {
+  padding: 20px 10px;
+}
+
+.ms_dropdown li a {
+  text-decoration: none;
+  color: grey;
+}
 
 
-
+.templates {
+  display: none;
+}
 
 /* Fine Classi  */
 
