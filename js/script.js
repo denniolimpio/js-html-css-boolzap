@@ -2,7 +2,15 @@ $(document).ready( function(){
 // quando clicco sull'icona dell'aereplano stampo il contenuto inserito all'interno della input in ms_message-view.
 //-- per stampare quanto inserito nella input ho bisogno di "leggere" il suo contenuto con val().
 
+
+$(".ms_form i").click( function() {
+
+
+  searchName();
+})
+
 $(".btn-send").click( function () {
+
 
 inviaMessaggio();
 
@@ -10,7 +18,16 @@ setTimeout(receivedMessage, 3000);
 
 });
 
+
+
+
+
 });
+
+
+
+
+// FUNZIONI
 
  function inviaMessaggio () {
 
@@ -58,7 +75,7 @@ setTimeout(receivedMessage, 3000);
 function receivedMessage () {
 
   // leggo il contenuto inserito nella input
-       $(".templates .ms_messageText span").text(" Ciao Dennis! come va?");
+       $(".templates .ms_messageText span").text(" Ciao");
 
 
        // inserisco l'orario di invio del messaggio
@@ -66,7 +83,7 @@ function receivedMessage () {
        var date = new Date ();
        var hours = date.getHours();
        var minutes = date.getMinutes();
-       var timeMessage = hours + " : " + minutes;
+       var timeMessage = addZero(hours) + " : " + addZero(minutes);
 
      //stampo l'orario
 
@@ -85,3 +102,17 @@ function receivedMessage () {
 
 
      };
+
+     function addZero (numero) {
+       if(numero < 10) {
+         return "0" +  numero
+       }
+       return numero;
+     }
+
+
+     function searchName () {
+       var nameTyped = $(".ms_form input").val();
+       console.log(nameTyped);
+
+     }
