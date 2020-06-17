@@ -20,7 +20,7 @@ ul {
 
 ul li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 15px 0 8px
 
 
 }
@@ -30,20 +30,30 @@ i {
 }
 img {
   border-radius: 50%;
+  width: 100%;
 
 }
+
+input:focus{
+  color: grey;
+  border: 1px solid purple;
+
+}
+
 /* Fine Generali */
 
-/* Layout */
 
+/* Layout MacroAree */
+/* ---- Wrapper  */
 .ms_wrapper-bg-gradient {
   height: 100vh;
-  min-width: 1024px;
+  min-width: 1044px;
   position: relative;
   background: rgb(12,151,144);
   background: linear-gradient(180deg, rgba(12,151,144,1) 20%, rgba(220,219,211,1) 20%);
 }
 
+/* ----contentitore webApp */
 .ms_container-webapp {
   height: 95%;
   width: 80%;
@@ -55,19 +65,14 @@ img {
   margin: auto;
 
 }
-
-/* Layout Sidebar  */
+/* ---- colonna Sinistra */
 .ms_sidebar {
   float: left;
   width: 400px;
   height: 100%;
   background-color: #fff;
 }
-
-.ms_top-bar.ms_left {
-  border-right: 0.20px solid lightgrey;
-}
-
+/* ---- colonna Destra */
 .ms_content {
   float: right;
   height: 100%;
@@ -75,22 +80,8 @@ img {
   min-width: 400px;
 }
 
-/* barra superiore */
-.ms_top-bar {
-  width: 100%;
-  height: 90px;
-  background-color: #eaeaea;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.ms_top-bar img {
-    height: 80%;
-    border-radius: 50%;
-    margin: 0 10px;
-}
-/* barra delle notifiche */
-.ms_sidebar .ms_notification {
+/* ---- Barra delle notifiche */
+.ms_notification {
   display: flex;
   flex-flow: row wrap;
   justify-content:  flex-start;
@@ -99,12 +90,64 @@ img {
   height: 90px;
   background-color: #8edafc;
 }
+
+/* ---- Barra ricerca */
+.ms_search-bar {
+  position: relative;
+  height: 50px;
+  background-color: #fafafa;
+  margin: 0px 5px;
+
+}
+
+/* ---- Elenco chat contatti */
+.ms_chatList {
+  height: calc(100% - 230px);
+}
+
+/* ---- Area visualizzazione messaggi */
+.ms_message-view {
+  height: calc(100% - 160px);
+  padding: 50px 80px;
+  background-image: url(../img/mine.jpg)
+}
+
+/* barra inferiore destra  */
+.ms_bottom-Bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  background-color: #f3eeea;
+}
+/* Fine Layout MacroAree */
+
+/* Layout */
+
+
+/* ---- Layout Sidebar  */
+
+.ms_top-bar.ms_left {
+  border-right: 0.20px solid lightgrey;
+}
+/* ---- barra superiore */
+.ms_top-bar {
+  width: 100%;
+  height: 90px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- barra delle notifiche */
+
 .ms_notification-icon {
   color: #8edafc;
   border-radius: 50%;
   background-color: #fff;
   padding: 16px 12px;
-  margin: 0 10px 0 30px;
+  margin: 0 15px 0 30px;
 }
 .ms_bell i {
   font-size: 25px;
@@ -118,17 +161,9 @@ img {
   font-size: 13px;
   color: grey;
 }
-/* fine barra delle notifiche */
+/* ---- fine barra delle notifiche */
 
-/* barra ricerca */
-.ms_sidebar .ms_search-bar {
-  position: relative;
-  height: 50px;
-  background-color: #fafafa;
-  margin: 0px 5px;
-
-}
-
+/* ---- barra ricerca */
 .ms_form input {
   width: 100%;
   height: 100%;
@@ -142,35 +177,52 @@ img {
   font-size: 12px;
   color: #b1b1b1;
 }
+
 .ms_search-icn{
   position: absolute;
   left: 15px;
   top: 15px;
   font-size: 20px;
-
 }
+
 /* fine barra ricerca */
 
-/* Elenco Chat */
-.ms_sidebar .ms_chatList {
-  height: calc(100% - 230px);
+/* ---- Elenco Chat */
+.ms_chatList ul li {
+  border-bottom: .2px solid #F5F5F5;
+  width: 100%;
+  margin: 0;
 }
-
+/* ---- lista contatti */
 .ms_chat-item {
-  height: 100px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border: .2px solid #F5F5F5;
-}
-.ms_chat-item .ms_avatar {
-  margin: 0 15px;
 
 }
-.ms_chat-item .ms_info-contact p{
-  color: #D0D0D0;
+.ms_chat-item .ms_avatar {
+  height: 60px;
+  width: 60px;
+}
+
+/* informazioni contatti */
+.ms_info-contact {
+  position: relative;
+  flex-grow: 1;
+}
+.ms_info-contact p{
+  color: #B0B0B0;
   margin: 5px 0;
 }
+.ms_info-contact span {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 12px;
+  color: #B0B0B0;
+}
+
 
 /* Fine Elenco Chat */
 
@@ -179,15 +231,54 @@ img {
 
 /* Content layout */
 
-.ms_message {
-  height: calc(100% - 160px);
-  background-image: url(../img/mine.jpg)
+/*  ---- area visualizzazione messaggi */
+
+/*  ---- fine area visualizzazione messaggi */
+
+.ms_message-view .ms_message {
+  position: relative;
+  padding: 25px 100px 25px 15px;
+  margin: 15px 0;
+  max-width: 70%;
+  border-radius: 10px;
+  clear: both;
+}
+.ms_message-view .ms_message.send {
+  background-color: #d5f9ba;
+  float: right;
 }
 
-.ms_textArea {
-  height: 70px;
-  background-color: #f3eeea;
+.ms_message-view .ms_message.received {
+  background-color: #fff;
+  float: left;
 }
+
+.ms_message .ms_messageTime {
+  position: absolute;
+  right: 10px;
+  bottom: 3px;
+}
+.ms_message .ms_messageTime span {
+  font-size: 12px;
+    color: #B0B0B0;
+}
+
+/* --- input messaggio */
+.ms_bottom-Bar .ms_form-message{
+  width: 100%;
+}
+.ms_bottom-Bar .ms_icon i {
+  margin: 0 20px;
+  font-size: 25px;
+}
+.ms_bottom-Bar .ms_form-message input {
+  height: 40px;
+  border: none;
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* ---  fine input messaggio */
 
 
 
@@ -201,11 +292,15 @@ img {
 
 }
 
+.ms_avatar {
+  height: 50px;
+  width: 50px;
+  margin: 0 15px;
 
-
-.ms_chatList img {
-  width: 70px;
 }
+
+
+
 
 
 /* Fine Classi  */
