@@ -187,18 +187,14 @@ input:focus{
 
 /* fine barra ricerca */
 
-/* ---- Elenco Chat */
-.ms_chatList ul li {
-  border-bottom: .2px solid #F5F5F5;
-  width: 100%;
-  margin: 0;
-}
+
 /* ---- lista contatti */
 .ms_chat-item {
   height: 90px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  border-bottom: .2px solid #9e9e9e57;
 
 }
 .ms_chat-item .ms_avatar {
@@ -297,6 +293,19 @@ input:focus{
   width: 50px;
   margin: 0 15px;
 
+}
+
+.ms_with-dropdown i {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 12px;
+}
+
+.ms_message:hover i {
+  display: block;
+  animation: 3s;
 }
 
 .ms_dropdown {

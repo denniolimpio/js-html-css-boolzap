@@ -1,48 +1,68 @@
 $(document).ready( function(){
 
-  // quando seleziono l'input search avvio la ricerca tra i contatti
-
-  //inizio evento click search input
-
-$(".ms_form input").click( function() {
-
-  searchName();
-
-});
-//fine evento click search input
-
-$(".ms_with-dropdown").click( function () {
-
-  $(this).children(".ms_dropdown").addClass("active");
-});
-
-// quando clicco sull'icona dell'aereplano stampo il contenuto inserito all'interno della input in ms_message-view.
-// alcuni secondi dopo aver stampato l'input compare un messaggio di risposta
-
-//inizio evento click aereplano
-$(".btn-send").click( function () {
+  // cliccando "papler-plane "" genero un evento:
+  // ---> invio  Messaggio
+  //--- > simulo ricezione Messaggio dopo un certo lasso di tempo
+  $(".btn-send").click( function () {
 
 
-inviaMessaggio();
+    inviaMessaggio();
 
-setTimeout(receivedMessage, 3000);
+    setTimeout(receivedMessage, 3000);
 
-});
+  });
 
-//fine  evento click aereplano
 
-// se clicco il tasto invio genero un evento
+  // premendo il tasto invio ( con form-message input attivo) invio il messaggio.
 
-$(".ms_form-message input").keypress( function() {
+  $(".ms_form-message input").keypress( function() {
 
-if((event.which === 13) || (event.keyCode === 13)){
-  inviaMessaggio();
+    if((event.which === 13) || (event.keyCode === 13)){
+      inviaMessaggio();
 
-  setTimeout(receivedMessage, 3000);
+      setTimeout(receivedMessage, 3000);
 
-}
+    }
 
-});
+  });
+
+
+  // --- ricerca contatti
+  // leggo il contenuto della input
+  // recupero la lista di tutti i nomi presenti nel DOM
+  // controllo la corrispondenza tra l'elenco dei contatti e il nome inserito dall'utente;
+  // se questa è presente mostro il contatto e nacondo gli altri.
+
+  $(".ms_form input").keyup( function() {
+
+    var searchInput = $(this).val();
+
+    var contactList = $(".ms_chat-item");
+
+    contactList.each( function(){
+
+      var contactName = $(this).find(".ms_name").text().toLowerCase();
+
+      if( contactName.includes(searchInput) ) {
+        $(this).show();
+      } else {
+        $(this).hide();
+
+      }
+    });
+  });
+
+
+  // --dropdown
+
+  // ---> mostro menu a comparsa:
+  // ---> elimina Messaggio
+  // ---> info contatto
+  $(".ms_with-dropdown").click( function () {
+
+    $(this).children(".ms_dropdown").toggleClass("active");
+  });
+
 
 
 });
@@ -54,112 +74,87 @@ if((event.which === 13) || (event.keyCode === 13)){
 
 // FUNZIONI
 
-
-// ------ funzione per stampare contenuto input
-
- function inviaMessaggio () {
-
-// leggo il contenuto inserito nella input
-   var testoMessaggio = $(".ms_form-message input").val();
-   console.log(testoMessaggio);
-
-   if (testoMessaggio != "" ) {
-
-    // prendo il contenuto  della input e lo inserisco nel templates
-
-     $(".templates .ms_messageText span").text(testoMessaggio);
-
-
-     // inserisco l'orario di invio del messaggio
-
-     var date = new Date ();
-     var hours = date.getHours();
-     var minutes = date.getMinutes();
-     var timeMessage = hours + " : " + minutes;
-
-   //stampo l'orario
-
-   $(".templates .ms_messageTime span").text(timeMessage);
+// ---- funzione invia messaggio:
+// leggo il contenuto inserito nella input ms_message;
+// eseguo la funzione SOLO se il campo di input non è vuoto;
+// prendo il contenuto  della input text e lo inserisco all'interno del templates;
+// --- > $(".templates .ms_messageText span");
+// aggiungo la funzione new Date per generare l'ora di ricezione del messaggio;
+// inserisco l'ora all'interno del template;
+// ---> $(".templates .ms_messageTime span");
+// rendo visibile il templates  all'interno della area di visualizzazione dei messaggi;
+// ---> ms_message-view;
+// ---> aggiungo a ms_message la classe send (con gli stili css);
+// resetto il  contenuto della input;
+// Con scrollTop vado automati. alla fine della pagina per mostare l'ultimo messaggio inviato;
 
 
-     // clono il template in cui inserire il contenuto della input
-       var cloneTemplate = $(".templates .ms_message").clone();
+function inviaMessaggio () {
 
-      // aggiungo in templates in ms_message-view
-       $(".ms_message-view").append(cloneTemplate);
+  var testoMessaggio = $(".ms_form-message input").val();
 
-       // aggiungo la classe send
-
-       $(cloneTemplate).addClass("send");
+  if (testoMessaggio != "" ) {
 
 
+    $(".templates .ms_messageText span").text(testoMessaggio);
 
-       // resetto il  contenuto della input
+    var date = new Date ();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var timeMessage = addZero(hours) + " : " + addZero(minutes);
 
-      testoMessaggio = $(".ms_form-message input").val("");
 
-      //scrollo alla fine della pagina
-      $(".ms_message-view").scrollTop($(".ms_message-view").height());
+    $(".templates .ms_messageTime span").text(timeMessage);
 
-   }
+    var cloneTemplate = $(".templates .ms_message").clone();
+
+    $(".ms_message-view").append(cloneTemplate);
+
+    $(cloneTemplate).addClass("send");
+
+
+    testoMessaggio = $(".ms_form-message input").val("");
+
+    $(".ms_message-view").scrollTop($(".ms_message-view").height());
+
+  }
 
 };
 
 
-// ------ funzione per simulare la ricezione di un messaggio
+// -----funzione per simulare la ricezione di un messaggio
+// scrivo il testo da stampare;
+// genero l'ora di ricezione del messaggio:
+// clono il template e lo inserisco all'interno -->
+// ---> ms_message-view;
+// ---> aggiungo a ms_message la classe received (con gli stili css);
+// Con scrollTop vado automati. alla fine della pagina per mostare l'ultimo messaggio ricevuto;
 
 function receivedMessage () {
 
-  // leggo il contenuto inserito nella input
-       $(".templates .ms_messageText span").text(" Ciao");
+  $(".templates .ms_messageText span").text(" Ciao");
+
+  var date = new Date ();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var timeMessage = addZero(hours) + " : " + addZero(minutes);
+
+  $(".templates .ms_messageTime span").text(timeMessage);
+
+  var cloneTemplate = $(".templates .ms_message").clone();
+  $(".ms_message-view").append(cloneTemplate);
+
+  $(cloneTemplate).addClass("received");
+  $(".ms_message-view").scrollTop($(".ms_message-view").height());
+};
 
 
-       // inserisco l'orario di invio del messaggio
+// ---funzione Add0
+// Questa funzione consente di aggiungere uno zero "davanti" al numero quando il numero generato è < 10
 
-       var date = new Date ();
-       var hours = date.getHours();
-       var minutes = date.getMinutes();
-       var timeMessage = addZero(hours) + " : " + addZero(minutes);
-
-     //stampo l'orario
-
-     $(".templates .ms_messageTime span").text(timeMessage);
-
-
-       // clono il template in cui inserire il contenuto della input
-         var cloneTemplate = $(".templates .ms_message").clone();
-
-        // aggiungo in templates in ms_message-view
-         $(".ms_message-view").append(cloneTemplate);
-
-         // aggiungo la classe received
-
-         $(cloneTemplate).addClass("received");
-
-         //scrollo alla fine della pagina
-         $(".ms_message-view").scrollTop($(".ms_message-view").height());
-
-
-     };
-
-
-     // ---funzione che  consente di aggiungere uno zero "avanti" quando il numero è inferiore a 10
-
-     function addZero (numero) {
-       if(numero < 10) {
-         return "0" +  numero
-       }
-       return numero;
-     }
-
-
-// ----- funzione ricerca tra i contatti
-
-     function searchName () {
-
-       var nameTyped = $(".ms_form input").val();
-       console.log(nameTyped);
-
-
-
-     }
+function addZero (numero) {
+  if(numero < 10) {
+    return "0" +  numero
+  }
+  return numero;
+}
