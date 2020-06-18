@@ -4,12 +4,8 @@ $(document).ready( function(){
   // ---> invio  Messaggio
   //--- > simulo ricezione Messaggio dopo un certo lasso di tempo
   $(".btn-send").click( function () {
-
-
     inviaMessaggio();
-
     setTimeout(receivedMessage, 3000);
-
   });
 
 
@@ -19,11 +15,8 @@ $(document).ready( function(){
 
     if((event.which === 13) || (event.keyCode === 13)){
       inviaMessaggio();
-
       setTimeout(receivedMessage, 3000);
-
     }
-
   });
 
 
@@ -52,24 +45,23 @@ $(document).ready( function(){
     });
   });
 
-
   // --dropdown
-
   // ---> mostro menu a comparsa:
   // ---> elimina Messaggio
   // ---> info contatto
-  $(".ms_with-dropdown").click( function () {
+
+  // il menu a tendina una volta cliccato resta visibile.
+  // si chiude quando :
+  // --->  apro un altro menu a tendina;
+  // ---> se clicco nuovamente sul icona "chevron"
+
+  $(document).on( "click", ".ms_with-dropdown", function () {
 
     $(this).children(".ms_dropdown").toggleClass("active");
   });
-
-
-
 });
 
 // fine document.ready
-
-
 
 
 // FUNZIONI
@@ -95,14 +87,12 @@ function inviaMessaggio () {
 
   if (testoMessaggio != "" ) {
 
-
     $(".templates .ms_messageText span").text(testoMessaggio);
 
     var date = new Date ();
     var hours = date.getHours();
     var minutes = date.getMinutes();
     var timeMessage = addZero(hours) + " : " + addZero(minutes);
-
 
     $(".templates .ms_messageTime span").text(timeMessage);
 
@@ -111,8 +101,6 @@ function inviaMessaggio () {
     $(".ms_message-view").append(cloneTemplate);
 
     $(cloneTemplate).addClass("send");
-
-
     testoMessaggio = $(".ms_form-message input").val("");
 
     $(".ms_message-view").scrollTop($(".ms_message-view").height());
@@ -120,7 +108,6 @@ function inviaMessaggio () {
   }
 
 };
-
 
 // -----funzione per simulare la ricezione di un messaggio
 // scrivo il testo da stampare;
