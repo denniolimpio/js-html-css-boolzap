@@ -316,6 +316,11 @@ input:focus{
   display: block;
 }
 
+/* todo */
+.delete {
+  display: none;
+}
+
 .ms_dropdown {
   position: absolute;
   top: 74%;
@@ -324,7 +329,7 @@ input:focus{
   width: 180px;
   background-color: #fff;
   box-shadow: 0px 15px 23px -21px rgba(0,0,0,0.64);
-
+  transition: all 0.5s ease;
 }
 .ms_dropdown li {
   padding: 20px 10px;

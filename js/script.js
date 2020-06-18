@@ -58,8 +58,16 @@ $(document).ready( function(){
   $(document).on( "click", ".ms_with-dropdown", function () {
 
     $(this).children(".ms_dropdown").toggleClass("active");
+
   });
 });
+
+// Aperto il menu a tendina, se clicco su "elimina messaggio" questo viene cancellato.
+$(document).on( "click", ".ms_delete", function () {
+
+  $(this).parents(".ms_message").remove();
+
+})
 
 // fine document.ready
 
