@@ -23,11 +23,13 @@
     <!-- container principale webapp -->
     <div class="ms_container-webapp">
 
+
+
       <!-- contenitore sidebar left -->
       <div class="ms_sidebar">
 
         <!-- barra superiore sinistra-->
-        <div class="ms_top-bar ms_left">
+        <div class="ms_top-bar ms_left chat-">
 
           <!-- foto profilo -->
           <div class="ms_avatar">
@@ -77,331 +79,745 @@
         </div>
         <!-- fine barra ricerca contatti -->
 
-        <!-- elenco chat attive -->
-        <div class="ms_chatList ms_overflow ">
+        <!-- elenco miei contatti -->
+        <div class="ms_contactList ms_overflow ">
 
-              <!-- chat item  -->
-              <div class="ms_chat-item">
-
-                <!-- foto profilo -->
-                <div class="ms_avatar">
-                  <img src="img/avatar_1.jpg" alt="">
-                </div>
-
-                <!-- anteprima chat -->
-                <div class="ms_info-contact">
-                  <h3 class="ms_name"> Michele</h3>
-                  <p>Non poteva essere altrimenti</p>
-                  <span> 17:53</span>
-                </div>
-              </div>
-              <!-- fine chat item  -->
-
-              <!-- chat item  -->
-              <div class="ms_chat-item">
-
-                <!-- foto profilo -->
-                <div class="ms_avatar">
-                  <img src="img/avatar_2.jpg" alt="">
-                </div>
-
-                <!-- anteprima chat -->
-                <div class="ms_info-contact">
-                  <h3 class="ms_name">Fabio</h3>
-                  <p>Non poteva essere altrimenti</p>
-                  <span> 17:53</span>
-                </div>
-              </div>
-              <!-- fine chat item  -->
-
-
-              <!-- chat item  -->
-              <div class="ms_chat-item">
-
-                <!-- foto profilo -->
-                <div class="ms_avatar">
-                  <img src="img/avatar_3.jpg" alt="">
-                </div>
-
-                <!-- anteprima chat -->
-                <div class="ms_info-contact">
-                  <h3 class="ms_name"> Samuele</h3>
-                  <p>Non poteva essere altrimenti</p>
-                  <span> 17:53</span>
-                </div>
-              </div>
-              <!-- fine chat item  -->
-
-                <!-- chat item  -->
-                <div class="ms_chat-item">
-
-                  <!-- foto profilo -->
-                  <div class="ms_avatar">
-                    <img src="img/avatar_4.jpg" alt="">
-                  </div>
-
-                  <!-- anteprima chat -->
-                  <div class="ms_info-contact">
-                    <h3 class="ms_name">Alessandro B.</h3>
-                    <p>Non poteva essere altrimenti</p>
-                    <span> 17:53</span>
-                  </div>
-                </div>
-                <!-- fine chat item  -->
-
-                <!-- chat item  -->
-                <div class="ms_chat-item">
-
-                  <!-- foto profilo -->
-                  <div class="ms_avatar">
-                    <img src="img/avatar_5.jpg" alt="">
-                  </div>
-
-                  <!-- anteprima chat -->
-                  <div class="ms_info-contact">
-                    <h3 class="ms_name">Alessandro L.</h3>
-                    <p>Non poteva essere altrimenti</p>
-                    <span> 17:53</span>
-                  </div>
-                </div>
-                <!-- fine chat item  -->
-
-                <!-- chat item  -->
-                <div class="ms_chat-item">
-
-                  <!-- foto profilo -->
-                  <div class="ms_avatar">
-                    <img src="img/avatar_6.jpg" alt="">
-                  </div>
-
-                  <!-- anteprima chat -->
-                  <div class="ms_info-contact">
-                  <h3 class="ms_name">Claudia</h3>
-                    <p>Non poteva essere altrimenti</p>
-                    <span> 17:53</span>
-                  </div>
-                </div>
-                <!-- fine chat item  -->
-
-                <!-- chat item  -->
-                <div class="ms_chat-item">
-
-                  <!-- foto profilo -->
-                  <div class="ms_avatar">
-                    <img src="img/avatar_7.jpg" alt="">
-                  </div>
-
-                  <!-- anteprima chat -->
-                  <div class="ms_info-contact">
-                    <h3 class="ms_name">Davide</h3>
-                    <p>Non poteva essere altrimenti</p>
-                    <span> 17:53</span>
-                  </div>
-                </div>
-                <!-- fine chat item  -->
-
-                <!-- chat item  -->
-                <div class="ms_chat-item">
-
-                  <!-- foto profilo -->
-                  <div class="ms_avatar">
-                    <img src="img/avatar_8.jpg" alt="">
-                  </div>
-
-                  <!-- anteprima chat -->
-                  <div class="ms_info-contact">
-                    <h3 class="ms_name">Federico</h3>
-                    <p>Non poteva essere altrimenti</p>
-                    <span> 17:53</span>
-                  </div>
-                </div>
-                <!-- fine chat item  -->
-
-          </div>
-          <!-- Fine elenco chat -->
-
-
-        </div>
-        <!-- Fine contenitore sidebar left -->
-
-        <!-- contenitore destro -->
-
-        <div class="ms_content">
-
-          <!-- barra superiore destra -->
-          <div class="ms_top-bar">
+          <!--  single contact item  -->
+          <div data-contact = "0" class="ms_contact-item selected">
 
             <!-- foto profilo -->
             <div class="ms_avatar">
               <img src="img/avatar_1.jpg" alt="">
             </div>
 
-            <!-- informazioni contatto -->
+            <!-- anteprima chat -->
             <div class="ms_info-contact">
-              <h3 class="ms_name">Michele</h3>
-              <p> Ultimo accesso oggi alle 15:40</p>
+              <h3 class="ms_name"> Michele</h3>
+              <p>Non poteva essere altrimenti</p>
+              <span> 17:53</span>
             </div>
-
-            <!-- lista icone -->
-            <div class="ms_icon-list">
-              <ul>
-                <li>
-                  <a href="#"> <i class="fas fa-search "></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-paperclip"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-                </li>
-              </ul>
-            </div>
-            <!-- Fine lista icone -->
           </div>
-          <!-- barra superiore destra -->
+          <!--  fine  single contact item  -->
 
-          <!-- area visualizzazione messa -->
-          <div class= "ms_message-view ms_overflow ">
+          <!--  single contact item  -->
+          <div data-contact = "1" class="ms_contact-item">
 
-            <!-- messaggio inviato -->
-            <div class="ms_message send ">
+            <!-- foto profilo -->
+            <div class="ms_avatar">
+              <img src="img/avatar_2.jpg" alt="">
+            </div>
 
-              <!-- dropdown -->
-          <div class="ms_with-dropdown">
-            <a href="#">
-              <i class="fas fa-chevron-down test"></i>
-            </a>
-            <ul class="ms_dropdown">
+            <!-- anteprima chat -->
+            <div class="ms_info-contact">
+              <h3 class="ms_name">Fabio</h3>
+              <p>Non poteva essere altrimenti</p>
+              <span> 17:53</span>
+            </div>
+          </div>
+          <!--  fine  single contact item  -->
+
+          <!--  single contact item  -->
+          <div data-contact = "2" class="ms_contact-item">
+
+            <!-- foto profilo -->
+            <div class="ms_avatar">
+              <img src="img/avatar_3.jpg" alt="">
+            </div>
+
+            <!-- anteprima chat -->
+            <div class="ms_info-contact">
+              <h3 class="ms_name"> Samuele</h3>
+              <p>Non poteva essere altrimenti</p>
+              <span> 17:53</span>
+            </div>
+          </div>
+          <!--  fine  single contact item  -->
+
+          <!--  single contact item  -->
+          <div  data-contact = "3" class="ms_contact-item">
+
+            <!-- foto profilo -->
+            <div class="ms_avatar">
+              <img src="img/avatar_4.jpg" alt="">
+            </div>
+
+            <!-- anteprima chat -->
+            <div class="ms_info-contact">
+              <h3 class="ms_name">Alessandro B.</h3>
+              <p>Non poteva essere altrimenti</p>
+              <span> 17:53</span>
+            </div>
+          </div>
+          <!--  fine  single contact item  -->
+
+          <!--  single contact item  -->
+          <div data-contact = "4" class="ms_contact-item">
+
+            <!-- foto profilo -->
+            <div class="ms_avatar">
+              <img src="img/avatar_5.jpg" alt="">
+            </div>
+
+            <!-- anteprima chat -->
+            <div class="ms_info-contact">
+              <h3 class="ms_name">Alessandro L.</h3>
+              <p>Non poteva essere altrimenti</p>
+              <span> 17:53</span>
+            </div>
+          </div>
+          <!--  fine  single contact item  -->
+
+          <!--  single contact item  -->
+          <div data-contact = "5" class="ms_contact-item">
+
+            <!-- foto profilo -->
+            <div class="ms_avatar">
+              <img src="img/avatar_6.jpg" alt="">
+            </div>
+
+            <!-- anteprima chat -->
+            <div class="ms_info-contact">
+              <h3 class="ms_name">Claudia</h3>
+              <p>Non poteva essere altrimenti</p>
+              <span> 17:53</span>
+            </div>
+          </div>
+          <!--  fine  single contact item  -->
+
+          <!--  single contact item  -->
+          <div  data-contact = "6" class="ms_contact-item">
+
+            <!-- foto profilo -->
+            <div class="ms_avatar">
+              <img src="img/avatar_7.jpg" alt="">
+            </div>
+
+            <!-- anteprima chat -->
+            <div class="ms_info-contact">
+              <h3 class="ms_name">Davide</h3>
+              <p>Non poteva essere altrimenti</p>
+              <span> 17:53</span>
+            </div>
+          </div>
+          <!--  fine  single contact item  -->
+
+          <!--  single contact item  -->
+          <div data-contact = "7" class="ms_contact-item">
+
+            <!-- foto profilo -->
+            <div class="ms_avatar">
+              <img src="img/avatar_8.jpg" alt="">
+            </div>
+
+            <!-- anteprima chat -->
+            <div class="ms_info-contact">
+              <h3 class="ms_name">Federico</h3>
+              <p>Non poteva essere altrimenti</p>
+              <span> 17:53</span>
+            </div>
+          </div>
+          <!--  fine  single contact item  -->
+
+        </div>
+        <!-- fine elenco miei contatti -->
+
+
+      </div>
+      <!-- Fine contenitore sidebar left -->
+
+      <!-- contenitore destro -->
+
+      <div class="ms_content">
+
+        <!-- barra superiore destra -->
+        <div class="ms_top-bar current-chat">
+
+          <!-- foto profilo -->
+          <div class="ms_avatar">
+            <img src="img/avatar_1.jpg" alt="">
+          </div>
+
+          <!-- informazioni contatto -->
+          <div class="ms_info-contact">
+            <h3 class="ms_name">Michele</h3>
+            <p> Ultimo accesso oggi alle 15:40</p>
+          </div>
+
+          <!-- lista icone -->
+          <div class="ms_icon-list">
+            <ul>
               <li>
-
-                <a href="#" class="ms_delete"> elimina messaggio </a>
+                <a href="#"> <i class="fas fa-search "></i></a>
               </li>
-
-
               <li>
-                <a href="#"> info messaggio</a>
+                <a href="#"><i class="fas fa-paperclip"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-ellipsis-v"></i></a>
               </li>
             </ul>
-            <!-- fine dropdown -->
-
           </div>
+          <!-- Fine lista icone -->
+        </div>
+        <!-- barra superiore destra -->
 
+        <!-- Message container -->
+
+        <div class= "ms_messageContainer ms_overflow ">
+
+          <!-- chat  michele-->
+          <div data-chat = "0" class="chat active">
+            <!-- messaggio inviato -->
+            <div class="ms_message send ">
+              <!-- testo messaggio -->
               <div class="ms_messageText">
-                <span> Ciao come stai? </span>
+                <span> Ciao Michele, come stai? </span>
               </div>
-
+              <!-- ora messaggio -->
               <div class="ms_messageTime">
                 <span> 15:50</span>
               </div>
-
-            </div>
-
-            <!-- fine messaggio inviato -->
-
-
-            <!-- messaggio ricevuto -->
-
-            <div class="ms_message received">
               <!-- dropdown -->
-              <div class="ms_with-dropdown">
+              <div class="ms_arrow">
                 <a href="#">
-                  <i class="fas fa-chevron-down test"></i>
+                  <span><i class="fas fa-chevron-down test"></i></span>
                 </a>
-                <ul class="ms_dropdown">
+                <ul class="ms_option">
                   <li>
-
                     <a href="#" class="ms_delete"> elimina messaggio </a>
                   </li>
-
                   <li>
                     <a href="#"> info messaggio</a>
                   </li>
                 </ul>
               </div>
               <!-- fine dropdown -->
+            </div>
+            <!-- fine messaggio inviato -->
 
+            <!-- messaggio ricevuto -->
+            <div class="ms_message received">
+              <!-- testo Messaggio -->
               <div class="ms_messageText">
-                <span> Ciao come stai? </span>
-              </div>
 
+                <span> Ciao Dennis, bene. A te come va?</span>
+              </div>
+              <!-- ora messaggio -->
               <div class="ms_messageTime">
                 <span> 15:50</span>
               </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <i class="fas fa-chevron-down test"></i>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
             </div>
-
             <!-- Fine messaggio ricevuto -->
-
-
-
           </div>
-          <!-- inizio barra inferiore -->
-          <div class="ms_bottom-Bar">
+          <!-- chat fabio -->
 
-            <!-- icona sinistra -->
-            <div class="ms_icon">
-              <i class="far fa-smile"></i>
+          <div data-chat = "1" class="chat">
+            <!-- messaggio inviato -->
+            <div class="ms_message send ">
+              <!-- testo messaggio -->
+              <div class="ms_messageText">
+                <span> Ciao Fabio, come stai? </span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <span><i class="fas fa-chevron-down test"></i></span>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
             </div>
-            <!--  fine icona sinista-->
+            <!-- fine messaggio inviato -->
 
+            <!-- messaggio ricevuto -->
+            <div class="ms_message received">
+              <!-- testo Messaggio -->
+              <div class="ms_messageText">
 
-            <!-- input area -->
-
-            <div class="ms_form-message">
-              <input type="text" placeholder="Scrivi un messaggio">
+                <span> Ciao Dennis, bene. A te come va?</span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <i class="fas fa-chevron-down test"></i>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
             </div>
-            <!-- fine input area -->
-
-            <!-- icona  destra-->
-            <div class="ms_icon btn-send">
-              <i class="fas fa-paper-plane"></i>
-            </div>
-            <!-- fine icona destra-->
-
+            <!-- Fine messaggio ricevuto -->
           </div>
+          <!-- chat samuele -->
+
+          <div data-chat = "2" class="chat">
+
+            <!-- messaggio inviato -->
+            <div class="ms_message send ">
+              <!-- testo messaggio -->
+              <div class="ms_messageText">
+                <span> Ciao Samuele, come stai? </span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <span><i class="fas fa-chevron-down test"></i></span>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- fine messaggio inviato -->
+
+            <!-- messaggio ricevuto -->
+            <div class="ms_message received">
+              <!-- testo Messaggio -->
+              <div class="ms_messageText">
+
+                <span> Ciao Dennis, bene. A te come va?</span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <i class="fas fa-chevron-down test"></i>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- Fine messaggio ricevuto -->
+          </div>
+
+          <!-- chat ale 1 -->
+
+          <div data-chat = "3" class="chat">
+            <!-- messaggio inviato -->
+            <div class="ms_message send ">
+              <!-- testo messaggio -->
+              <div class="ms_messageText">
+                <span> Ciao alessandro, come stai? </span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <span><i class="fas fa-chevron-down test"></i></span>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- fine messaggio inviato -->
+
+            <!-- messaggio ricevuto -->
+            <div class="ms_message received">
+              <!-- testo Messaggio -->
+              <div class="ms_messageText">
+
+                <span> Ciao Dennis, bene. A te come va?</span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <i class="fas fa-chevron-down test"></i>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- Fine messaggio ricevuto -->
+          </div>
+
+          <!-- chat ale 2 -->
+
+          <div data-chat = "4" class="chat">
+            <!-- messaggio inviato -->
+            <div class="ms_message send ">
+              <!-- te
+
+              sto messaggio -->
+              <div class="ms_messageText">
+                <span> Ciao Alessandro L, come stai? </span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <span><i class="fas fa-chevron-down test"></i></span>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- fine messaggio inviato -->
+
+            <!-- messaggio ricevuto -->
+            <div class="ms_message received">
+              <!-- testo Messaggio -->
+              <div class="ms_messageText">
+
+                <span> Ciao Dennis, bene. A te come va?</span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <i class="fas fa-chevron-down test"></i>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- Fine messaggio ricevuto -->
+          </div>
+
+          <!-- chat cladia -->
+          <div data-chat = "5" class="chat">
+            <!-- messaggio inviato -->
+            <div class="ms_message send ">
+              <!-- testo messaggio -->
+              <div class="ms_messageText">
+                <span> Ciao Claudia, come stai? </span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <span><i class="fas fa-chevron-down test"></i></span>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- fine messaggio inviato -->
+
+            <!-- messaggio ricevuto -->
+            <div class="ms_message received">
+              <!-- testo Messaggio -->
+              <div class="ms_messageText">
+
+                <span> Ciao Dennis, bene. A te come va?</span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <i class="fas fa-chevron-down test"></i>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- Fine messaggio ricevuto -->
+          </div>
+
+          <!-- chat davide -->
+
+          <div data-chat = "6" class="chat">
+            <!-- messaggio inviato -->
+            <div class="ms_message send ">
+              <!-- testo messaggio -->
+              <div class="ms_messageText">
+                <span> Ciao Davide, come stai? </span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <span><i class="fas fa-chevron-down test"></i></span>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- fine messaggio inviato -->
+
+            <!-- messaggio ricevuto -->
+            <div class="ms_message received">
+              <!-- testo Messaggio -->
+              <div class="ms_messageText">
+
+                <span> Ciao Dennis, bene. A te come va?</span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <i class="fas fa-chevron-down test"></i>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- Fine messaggio ricevuto -->
+          </div>
+
+          <!-- chat fede -->
+
+          <div data-chat = "7" class="chat">
+            <!-- messaggio inviato -->
+            <div class="ms_message send ">
+              <!-- testo messaggio -->
+              <div class="ms_messageText">
+                <span> Ciao Federico, come stai? </span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <span><i class="fas fa-chevron-down test"></i></span>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- fine messaggio inviato -->
+
+            <!-- messaggio ricevuto -->
+            <div class="ms_message received">
+              <!-- testo Messaggio -->
+              <div class="ms_messageText">
+
+                <span> Ciao Dennis, bene. A te come va?</span>
+              </div>
+              <!-- ora messaggio -->
+              <div class="ms_messageTime">
+                <span> 15:50</span>
+              </div>
+              <!-- dropdown -->
+              <div class="ms_arrow">
+                <a href="#">
+                  <i class="fas fa-chevron-down test"></i>
+                </a>
+                <ul class="ms_option">
+                  <li>
+                    <a href="#" class="ms_delete"> elimina messaggio </a>
+                  </li>
+                  <li>
+                    <a href="#"> info messaggio</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- fine dropdown -->
+            </div>
+            <!-- Fine messaggio ricevuto -->
+          </div>
+        </div>
+        <!-- fine message  container -->
+
+        <!-- inizio barra inferiore -->
+        <div class="ms_bottom-Bar">
+
+          <!-- icona sinistra -->
+          <div class="ms_icon">
+            <i class="far fa-smile"></i>
+          </div>
+          <!--  fine icona sinista-->
+
+
+          <!-- input area -->
+
+          <div class="ms_form-message">
+            <input type="text" placeholder="Scrivi un messaggio">
+          </div>
+          <!-- fine input area -->
+
+          <!-- icona  destra-->
+          <div class="ms_icon btn-send">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <!-- fine icona destra-->
 
         </div>
-        <!-- Fine contenitore destro -->
+
       </div>
-      <!-- Fine container principale webapp -->
+      <!-- Fine contenitore destro -->
     </div>
-    <!-- Fine wrapper generico (sfondo gradient) -->
+    <!-- Fine container principale webapp -->
+  </div>
+  <!-- Fine wrapper generico (sfondo gradient) -->
 
-    <!-- template -->
+  <!-- template -->
 
-    <div class="templates">
+  <div class="templates">
 
-      <div class="ms_message">
-        <div class="ms_with-dropdown">
+    <div class="ms_message">
 
-          <a href="#">
-            <i class="fas fa-chevron-up"></i>
-          </a>
-
-          <ul class="ms_dropdown">
-            <li>
-
-              <a href="#" class="ms_delete"> elimina messaggio </a>
-            </li>
-
-            <li>
-              <a href="#"> info messaggio</a>
-            </li>
-
-          </ul>
-
-        </div>
-
-        <div class="ms_messageText">
-          <span> </span>
-        </div>
-
-        <div class="ms_messageTime">
-          <span></span>
-        </div>
+      <div class="ms_messageText">
+        <span> </span>
       </div>
-      </div>
-    <!-- script js-->
-    <script type="text/javascript" src="js/script.js">  </script>
-  </body>
 
-  </html>
+      <div class="ms_messageTime">
+        <span></span>
+      </div>
+      <!-- dropdown -->
+      <div class="ms_arrow">
+        <a href="#">
+          <i class="fas fa-chevron-up"></i>
+        </a>
+        <ul class="ms_option">
+          <li>
+            <a href="#" class="ms_delete"> elimina messaggio </a>
+          </li>
+          <li>
+            <a href="#"> info messaggio</a>
+          </li>
+        </ul>
+      </div>
+      <!-- fine dropdown -->
+    </div>
+  </div>
+  <!-- script js-->
+  <script type="text/javascript" src="js/script.js">  </script>
+</body>
+
+</html>
