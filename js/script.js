@@ -11,7 +11,7 @@ $(document).ready( function(){
 
   // premendo il tasto invio ( con form-message input attivo) invio il messaggio.
 
-  $(".ms_form-message input").keypress( function() {
+  $(".form-message input").keypress( function() {
 
     if((event.which === 13) || (event.keyCode === 13)){
       inviaMessaggio();
@@ -20,92 +20,107 @@ $(document).ready( function(){
   });
 
 
-  // --- ricerca contatti
+  //Cambio icona
+  // $(document).on( "focus", '.form-message input',
+  //    function() {
+  //
+  //      $('.microphone').removeClass('active');
+  //
+  //      $('.plane').removeClass('hide');
+  //    }
+
+  // --- Ricerca Contatti ---
+
   // leggo il contenuto della input
   // recupero la lista di tutti i nomi presenti nel DOM
   // controllo la corrispondenza tra l'elenco dei contatti e il nome inserito dall'utente;
   // se questa è presente mostro il contatto e nacondo gli altri.
 
-  $(".ms_form input").keyup( function() {
+  $(".form input").keyup( function() {
 
     var searchInput = $(this).val();
 
-    var contactList = $(".ms_contact-item");
+    var contactList = $(".contact-item");
 
     contactList.each( function(){
 
-      var contactName = $(this).find(".ms_name").text().toLowerCase();
+      var contactName = $(this).find(".name").text().toLowerCase();
 
       if( contactName.includes(searchInput) ) {
         $(this).show();
       } else {
         $(this).hide();
-
       }
     });
   });
 
-  // --dropdown
+
+  // --- Dropdown
+
   // ---> mostro menu a comparsa:
   // ---> elimina Messaggio
   // ---> info contatto
 
   // il menu a tendina una volta cliccato resta visibile.
-  // si chiude quando :
+  // si chiude quando:
   // --->  a) apro un altro menu a tendina;
-  // ---> b) se clicco nuovamente sul icona "chevron"
+  // ---> b) se clicco nuovamente sull icona "chevron/freccia"
 
-  $(document).on( "click", ".ms_arrow", function () {
+  $(document).on( "click", ".arrow", function () {
 
-//  a)
-    $(this).parents().siblings().find(".ms_option").removeClass("active");
-    // è possibile farlo anche not().
+    //  a)
+    $(this).parents().siblings().find(".option").removeClass("active");     // è possibile farlo anche not().
 
-//  b)
-    $(this).children(".ms_option").toggleClass("active");
+    //  b)
+    $(this).children(".option").toggleClass("active");
   });
 });
 
 
 // Aperto il menu a tendina, se clicco su "elimina messaggio" questo viene cancellato.
 
-$(document).on( "click", ".ms_delete", function () {
+$(document).on( "click", ".delete", function () {
 
-  $(this).parents(".ms_message").remove();
+  $(this).parents(".message").remove();
 
 })
 
 
 // ---- lista Chat
-//  clicco sul contatto e genero un evento:
-$(document).on( "click", ".ms_contact-item", function () {
 
-  // ---> rimuovo la classe selected a tutti gli elementi (di default mostro Michele)
-$(".ms_contact-item").removeClass("selected");
+// ---> Clicco sul contatto e genero un evento:
+// ---> Rimuovo la classe selected a tutti i contatti (di default mostro Michele)
+// ---> Aggiungo la classe selected all'elemento selezionato
+// ---> Mostro solo la chat del contatto con classe selected
+// --->  Quindi rimuovo a tutte le chat la classe "active"
 
-//---> aggiungo la classe selected all'elemento cliccato
-$(this).addClass("selected");
 
-//  mostro solo la chat del contatto con classe selected
-// Quindi
-// --> rimuovo a tutte le chat la classe "show-chat"
-$(".chat").removeClass("active");
-// ---> leggo il valore di data-contact
-var contactData = $(this).attr("data-contact");
+$(document).on( "click", ".contact-item", function () {
 
-// ---> cerco l'elemento chat che ha l'attributo data-chat === data-contact
-// -->  aggingo la classe "show-chat"
-$('.chat[data-chat="' +  contactData +'"]').addClass("active");
+  $(".contact-item").removeClass("selected");
 
-// devo modificare l'immagine e il testo dell'elemen nella top-bar right
+  $(this).addClass("selected");
 
-// ---> prendo il nome e l'immagine del contatto selezionato
-//
-var contactName = $(this).find(".ms_name").text();
-var contactAvatar = $(this).find("img").attr("src");
+  $(".chat").removeClass("active");
 
-$(".current-chat").find("h3").text(contactName);
-$(".current-chat").find("img").attr("src", contactAvatar);
+  // ---> leggo il valore di data-contact
+  // ---> cerco l'elemento chat che ha l'attributo data-chat === data-contact
+  // --->  Quando ho la corrispondenza aggiungo la classe "active"
+
+
+  var contactData = $(this).attr("data-contact");
+
+  $('.chat[data-chat="' +  contactData +'"]').addClass("active");
+
+  // ---> Modifico l'immagine e il testo dell'elemenento "active" nella top-bar right
+
+  var contactName = $(this).find(".name").text();
+  var contactAvatar = $(this).find("img").attr("src");
+
+
+  $(".current-chat").find("h3").text(contactName);
+  $(".current-chat").find("img").attr("src", contactAvatar);
+
 });
 
 // fine document.ready
@@ -114,81 +129,89 @@ $(".current-chat").find("img").attr("src", contactAvatar);
 // FUNZIONI
 
 // ---- funzione invia messaggio:
-// leggo il contenuto inserito nella input ms_message;
-// eseguo la funzione SOLO se il campo di input non è vuoto;
-// prendo il contenuto  della input text e lo inserisco all'interno del templates;
-// --- > $(".templates .ms_messageText span");
-// aggiungo la funzione new Date per generare l'ora di ricezione del messaggio;
-// inserisco l'ora all'interno del template;
-// ---> $(".templates .ms_messageTime span");
-// rendo visibile il templates  all'interno della area di visualizzazione dei messaggi;
-// ---> ms_messageContainer;
-// ---> aggiungo a ms_message la classe send (con gli stili css);
-// resetto il  contenuto della input;
-// Con scrollTop vado automati. alla fine della pagina per mostare l'ultimo messaggio inviato;
-
 
 function inviaMessaggio () {
 
-  var testoMessaggio = $(".ms_form-message input").val();
+  // leggo il contenuto inserito nella input message;
+  var testoMessaggio = $(".form-message input").val();;
+  //console.log(testoMessaggio)
 
+  // VALIDAZIONE eseguo la funzione SOLO se il campo di input non è vuoto;
   if (testoMessaggio != "" ) {
 
-    $(".templates .ms_messageText span").text(testoMessaggio);
+    // clono il template message
+    var message = $(".templates .message").clone();
 
-    var date = new Date ();
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var timeMessage = addZero(hours) + " : " + addZero(minutes);
+    // --> stampo il contenuto della input in messageText
+    message.children(".messageText").text(testoMessaggio);
+    // --> invoco la funzione oraCorrente e la stampo in messageTime per mostare l'orario
+    message.children(".messageTime").append(oraCorrente());
 
-    $(".templates .ms_messageTime span").text(timeMessage);
+    // --> aggiungo il messaggio generato al contenitore delle Chat e lo rendo visibile (add class)
+    $(message).addClass("send");
+    $(".messageContainer .active").append(message);
 
-    var cloneTemplate = $(".templates .ms_message").clone();
 
-    $(".ms_messageContainer").append(cloneTemplate);
+    //azzero contenuto input
+    testoMessaggio = $(".form-message input").val("");
 
-    $(cloneTemplate).addClass("send");
-    testoMessaggio = $(".ms_form-message input").val("");
-
-    $(".ms_messageContainer").scrollTop($(".ms_messageContainer").height());
+    $(".messageContainer").scrollTop($(".messageContainer").height());
 
   }
 
 };
 
-// -----funzione per simulare la ricezione di un messaggio
-// scrivo il testo da stampare;
-// genero l'ora di ricezione del messaggio:
-// clono il template e lo inserisco all'interno -->
-// ---> ms_messageContainer;
-// ---> aggiungo a ms_message la classe received (con gli stili css);
-// Con scrollTop vado automati. alla fine della pagina per mostare l'ultimo messaggio ricevuto;
+// ----- Messaggio ricevuto
 
 function receivedMessage () {
 
-  $(".templates .ms_messageText span").text(" Ciao");
+  // clono il template message
+
+  var message = $(".templates .message").clone();
+
+  // --> stampo il testo del messaggio in messageText
+
+  message.children(".messageText").text("Ciao");
+
+  // --> invoco la funzione oraCorrente e la stampo in messageTime per mostare l'orario
+
+  message.children(".messageTime").append(oraCorrente());
+
+  // --> aggiungo il messaggio generato al contenitore delle Chat attivo e lo rendo visibile (add class)
+
+  $(".messageContainer .active").append(message);
+  $(message).addClass("received");
+
+  // --> aggiungo lo scroll automatico della pagina
+  $(".messageContainer").scrollTop(".messageContainer").prop();
+};
+
+
+//--- funzione OraCorrente
+// genero ora e minuto corrente
+
+function oraCorrente () {
 
   var date = new Date ();
   var hours = date.getHours();
   var minutes = date.getMinutes();
   var timeMessage = addZero(hours) + " : " + addZero(minutes);
 
-  $(".templates .ms_messageTime span").text(timeMessage);
 
-  var cloneTemplate = $(".templates .ms_message").clone();
-  $(".ms_messageContainer").append(cloneTemplate);
-
-  $(cloneTemplate).addClass("received");
-  $(".ms_messageContainer").scrollTop($(".ms_messageContainer").height());
-};
+  return timeMessage;
+}
 
 
 // ---funzione Add0
 // Questa funzione consente di aggiungere uno zero "davanti" al numero quando il numero generato è < 10
 
 function addZero (numero) {
+
   if(numero < 10) {
+
     return "0" +  numero
   }
+
   return numero;
+
 }
