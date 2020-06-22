@@ -17,10 +17,12 @@ $(document).ready( function(){
       inviaMessaggio();
       setTimeout(receivedMessage, 1000);
     }
+
   });
 
 
   //Cambio icona
+
   // $(document).on( "focus", '.form-message input',
   //    function() {
   //
@@ -69,7 +71,12 @@ $(document).ready( function(){
   $(document).on( "click", ".arrow", function () {
 
     //  a)
-    $(this).parents().siblings().find(".option").removeClass("active");     // è possibile farlo anche not().
+
+
+    // $(this).parents().siblings().find(".option").removeClass("active");     // è possibile farlo anche not().
+
+    // dopo la correzione
+    $(".option").removeClass("active");     // è possibile farlo anche not().
 
     //  b)
     $(this).children(".option").toggleClass("active");
@@ -149,7 +156,7 @@ function inviaMessaggio () {
 
     // --> aggiungo il messaggio generato al contenitore delle Chat e lo rendo visibile (add class)
     $(message).addClass("send");
-    $(".messageContainer .active").append(message);
+    $(".messageContainer .chat.active").append(message);
 
 
     //azzero contenuto input
@@ -179,7 +186,7 @@ function receivedMessage () {
 
   // --> aggiungo il messaggio generato al contenitore delle Chat attivo e lo rendo visibile (add class)
 
-  $(".messageContainer .active").append(message);
+  $(".messageContainer .chat.active").append(message);
   $(message).addClass("received");
 
   // --> aggiungo lo scroll automatico della pagina
